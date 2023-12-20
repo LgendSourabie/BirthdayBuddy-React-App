@@ -1,4 +1,4 @@
-export default value = [
+export default [
   {
     id: 1,
     name: "Bertie Yates",
