@@ -1,5 +1,8 @@
 import { useState } from "react";
 import data from "./data";
+import List from "./List";
+import Person from "./Person";
+
 import "./index.css";
 const App = () => {
   const [persons, setPerson] = useState(data);
@@ -7,16 +10,16 @@ const App = () => {
   const clearAll = () => setPerson([]);
   return (
     <div className="container">
-      <h3> {persons.length} Birthdays Today</h3>
+      <h3>
+        {" "}
+        {persons.length} {persons.length === 0 ? "Birthday" : "Birthdays"} Today
+      </h3>
       {persons.map((person) => {
         const { id, name, age, image } = person;
         return (
           <div className="person" key={id}>
-            <img className="img" src={image} alt="Image" srcset="" />
-            <div>
-              <h4>{name}</h4>
-              <p>{age} years</p>
-            </div>
+            <List image={image} />
+            <Person name={name} age={age} />
           </div>
         );
       })}

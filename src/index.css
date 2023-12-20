@@ -306,3 +306,9 @@ main {
 }
 
 /* My class */
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
